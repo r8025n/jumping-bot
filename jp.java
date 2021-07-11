@@ -11,27 +11,29 @@ public class jp extends JPanel implements ActionListener{
     int z;
     boolean coll=false;
     
-    public static int k;
+    public static int botHeight;
     Timer t;
     int x,y,c=0,q=0;
+    
     jp(){
        
         setFocusable(true);
-        addKeyListener(new jp2());
+        addKeyListener(new Jump(this));
         x=650;
-        k=0;
+        botHeight=0;
         r1=new rect(x,400,50,50);
         r2=new rect(65,z,10,35);
         t=new Timer(5,this);
         t.start();
         
     }
+
     public void actionPerformed(ActionEvent e){
         //int q=r.nextInt(3);
         int sp=6;
         //(r)x-=sp;
         r1.m-=sp;
-        r2.n=420-k;
+        r2.n=420-botHeight;
         if(r1.m<0){
             //(r)x=650;
             r1.m=650;
@@ -51,17 +53,17 @@ public class jp extends JPanel implements ActionListener{
         g.fillOval(r1.m,r1.n,r1.o,r1.p);
         g.setColor(Color.red);
         //Static Object
-        g.fillRect(30, 350-k, 45, 70);//static_body
+        g.fillRect(30, 350-botHeight, 45, 70);//static_body
         g.setColor(Color.yellow);
-        g.fillOval(28, 310-k, 40, 40);//static_head
+        g.fillOval(28, 310-botHeight, 40, 40);//static_head
         g.setColor(Color.green);
-        g.fillRect(30, 420-k, 10, 35);//static_leg1
+        g.fillRect(30, 420-botHeight, 10, 35);//static_leg1
        //(r) g.fillRect(65, z, 10, 35);//static_leg2
         g.fillRect(r2.m,r2.n,r2.o,r2.p);
         g.setColor(Color.blue);
-        g.fillRect(35, 350-k, 10, 45);//static_hand
+        g.fillRect(35, 350-botHeight, 10, 45);//static_hand
         g.setColor(Color.black);
-        g.fillOval(55, 320-k, 7, 7);//static_eye
+        g.fillOval(55, 320-botHeight, 7, 7);//static_eye
         
         if(coll){
             //q++;
