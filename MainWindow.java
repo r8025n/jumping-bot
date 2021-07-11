@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-public class Main extends jp2{
+public class MainWindow{
 
     public static ImageIcon icon;
     public static Container c;
@@ -57,13 +57,15 @@ public class Main extends jp2{
         startButton.addActionListener(new ActionListener() {
            
             public void actionPerformed(ActionEvent ae){
-                jp p=new jp();
-                JFrame j=new JFrame("MAIN GAME");
+                GameWindow gameWindow=new GameWindow();
+
+                //gamewindow code transfarred to GameWindow class
+                /*JFrame j=new JFrame("MAIN GAME");
                 j.add(p);
                 j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 j.setSize(700,500);
                 j.setVisible(true);
-                j.setResizable(false);
+                j.setResizable(false);*/
             }
         });
         
