@@ -58,14 +58,6 @@ public class MainWindow{
            
             public void actionPerformed(ActionEvent ae){
                 GameWindow gameWindow=new GameWindow();
-
-                //gamewindow code transfarred to GameWindow class
-                /*JFrame j=new JFrame("MAIN GAME");
-                j.add(p);
-                j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                j.setSize(700,500);
-                j.setVisible(true);
-                j.setResizable(false);*/
             }
         });
         
