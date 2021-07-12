@@ -8,28 +8,32 @@ import java.awt.event.KeyEvent;
 public class Jump implements KeyListener {
 
 
-    jp newJp;
+    Controller newController;
     boolean jumped=false;
 
-    Jump(jp j){
-        newJp=j;
+    Jump(Controller c){
+        newController=c;
     }
 
+    @Override
     public void keyTyped(KeyEvent e){
         return;
     }
     
-    public void keyPressed(KeyEvent e){
-            int key=e.getKeyCode();
+    @Override
+    public void keyPressed(KeyEvent pressSpace){
+            int key=pressSpace.getKeyCode();
             if(key == KeyEvent.VK_SPACE && !jumped){
-                newJp.botHeight+=150;
+                newController.botHeight+=150;
                 jumped=true;
         }
     }
-    public void keyReleased(KeyEvent f){
-        int key=f.getKeyCode();
+
+    @Override
+    public void keyReleased(KeyEvent releaseSpace){
+        int key=releaseSpace.getKeyCode();
         if(key == KeyEvent.VK_SPACE && jumped){
-            newJp.botHeight-=150;
+            newController.botHeight-=150;
             jumped=false;
         }
     }
