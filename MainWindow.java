@@ -12,12 +12,11 @@ public class MainWindow{
     public static ImageIcon icon;
     public static Container c;
     public static JButton startButton,exitButton;
-    public static Font font1;
+    public static Font font1,font2;
     public static Cursor crsr;
     
     
-    public static void main(String[] args) {
-        
+    MainWindow(){
         JFrame newFrame=new JFrame("STARTING WINDOW");
         newFrame.setLayout(new FlowLayout(FlowLayout.CENTER, 200, 50));
         newFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -31,13 +30,11 @@ public class MainWindow{
         newLabel.setText("JUMPING BOT");
         newFrame.add(newLabel);
         
-        Font o=new Font("ARIAL",Font.BOLD,20);
-        newLabel.setFont(o);
+        font2=new Font("ARIAL",Font.BOLD,20);
+        newLabel.setFont(font2);
         
         startButton=new JButton("START");
         exitButton=new JButton("EXIT");
-        //startButton.setBounds(100, 110, 200, 80);
-        //exitButton.setBounds(210, 110, 100, 50);
         startButton.setToolTipText("Press to START the Game ");
         exitButton.setToolTipText("Press to EXIT the Game");
         newFrame.add(startButton);
@@ -53,7 +50,7 @@ public class MainWindow{
         crsr=new Cursor(Cursor.HAND_CURSOR);
         startButton.setCursor(crsr);
         exitButton.setCursor(crsr);
-        
+
         startButton.addActionListener(new ActionListener() {
            
             public void actionPerformed(ActionEvent ae){
@@ -67,6 +64,8 @@ public class MainWindow{
                 
             }
         });
+
+        
         newFrame.add(startButton);
         newFrame.add(exitButton);
     }
